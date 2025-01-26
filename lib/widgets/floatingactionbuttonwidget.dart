@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/widgets/add_note_bottom_sheet.dart';
 
 class FloatingActionButtonWidget extends StatelessWidget {
@@ -9,7 +9,12 @@ class FloatingActionButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(onPressed: (){
+    return FloatingActionButton(
+      backgroundColor: kPrimaryColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+      onPressed: (){
       showModalBottomSheet(context: context, 
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -22,6 +27,8 @@ class FloatingActionButtonWidget extends StatelessWidget {
         
       );
       },);
-    }, child: const Icon(Icons.add,size: 36,color: Colors.black,),);
+    },
+      child: const Icon(Icons.add,size: 36,color: Colors.black,), 
+    );
   }
 }
