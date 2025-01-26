@@ -9,6 +9,7 @@ final String traling;
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 4),
       decoration: BoxDecoration(
         color: Color(0xffffcc80),
         borderRadius: BorderRadius.circular(16),
