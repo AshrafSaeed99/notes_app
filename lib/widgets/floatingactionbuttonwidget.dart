@@ -10,7 +10,14 @@ class FloatingActionButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(onPressed: (){
-      showModalBottomSheet(context: context, builder: (context) {
+      showModalBottomSheet(context: context, 
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+      builder: (context) {
         return AddNoteBottomSheet(
         
       );
