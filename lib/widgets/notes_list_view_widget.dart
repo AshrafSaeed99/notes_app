@@ -10,6 +10,7 @@ class NotestListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        padding: const EdgeInsets.all(0),
         itemCount: 10,
         itemBuilder: (context, index) {
           return NoteItemWidget(
