@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/custom_icon_wdget.dart';
-
+import 'package:notes_app/widgets/custom_icon_widget.dart';
 class NotesAppBarWidget extends StatelessWidget {
   const NotesAppBarWidget({super.key,required this.icon,required this.appBarTitle});
   final IconData icon;
@@ -14,7 +13,7 @@ class NotesAppBarWidget extends StatelessWidget {
           appBarTitle,
           style: const TextStyle(fontSize: 30),
         ),
-        CustomIconWdget(icon: icon,),
+        CustomIconWidget(icon: icon,),
       ],
     );
   }

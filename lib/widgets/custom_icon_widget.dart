@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomIconWdget extends StatelessWidget {
-  const CustomIconWdget({super.key, required this.icon});
+class CustomIconWidget extends StatelessWidget {
+  const CustomIconWidget({super.key, required this.icon});
   final IconData icon;
 
   @override
