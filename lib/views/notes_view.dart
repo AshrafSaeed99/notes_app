@@ -15,7 +15,7 @@ class NotesView extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => EditNoteView(),),);
       },
         
-        child: const NotesBodyWidget()),
+        child: const NotesBodyWidget(),),
       floatingActionButton: FloatingActionButtonWidget(),
     );
   }
