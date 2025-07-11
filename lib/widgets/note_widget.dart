@@ -14,8 +14,8 @@ class NoteWidget extends StatelessWidget {
       height: 200,
       margin: const EdgeInsets.symmetric(vertical: 12,),
       child: ListTile(
-        //isThreeLine: true,
-        
+        isThreeLine: true,
+
         title: Text('Note'),
         subtitle: Text('This is a note'),
         trailing: IconButton(onPressed: (){}, icon: Icon(Icons.delete),),
