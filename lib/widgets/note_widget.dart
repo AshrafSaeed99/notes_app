@@ -1,33 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/modeles/note_model.dart';
 
 class NoteWidget extends StatelessWidget {
-  const NoteWidget({super.key});
-
+  const NoteWidget({super.key, required this.color, required this.note});
+  final Color color;
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
-    return Container(    
-      margin: const EdgeInsets.symmetric(vertical: 12),
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white.withAlpha(40),
+        color: color,
         borderRadius: BorderRadius.circular(12),
-      ),  
+      ),
       height: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            Text("Note 1", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,
-            //fontFamily: 'assets/fonts/Poppins-Regular.ttf',
-            ),),
-            IconButton(onPressed: (){}, icon: Icon(Icons.delete, color: Colors.red,))
-          ]),
-          SizedBox(height: 10,),
-          Text("Note 1", style: TextStyle(fontSize: 20),),
+              Text(
+                note.title,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.delete, color: Colors.red, size: 30),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          Text(
+            note.content,
+            style: TextStyle(fontSize: 20, color: Colors.black.withAlpha(5000)),
+          ),
           Spacer(),
-          Align(alignment: Alignment.bottomRight, child: Text('12/12/2022'))
+          Align(alignment: Alignment.bottomRight, 
+          child: Text('12/12/2022', style: TextStyle(color: Colors.black.withAlpha(5000), fontSize: 16),),),
         ],
       ),
     );
