@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 
 class AddNoteWidget extends StatelessWidget {
   const AddNoteWidget({super.key});
@@ -11,22 +12,22 @@ class AddNoteWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TextField(
+            cursorColor: kPrimarColor,
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-              ),
+              border: buildBorder(),
+              enabledBorder: buildBorder(),
               hintText: 'Title',
             ),
           ),
           TextField(
             maxLines: 10,
+            cursorColor: kPrimarColor,
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white),
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-              ),
+              border: buildBorder(),
+              enabledBorder: buildBorder(),
+              focusedBorder: buildBorder(),
               hintText: 'Content',
+              
             ),
           ),
           ElevatedButton(
@@ -46,4 +47,11 @@ class AddNoteWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+OutlineInputBorder buildBorder({Color color = kPrimarColor}) {
+  return OutlineInputBorder(
+    borderSide: BorderSide(color: color),
+    borderRadius: BorderRadius.all(Radius.circular(12)),
+  );
 }
